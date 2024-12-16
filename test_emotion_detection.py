@@ -22,6 +22,9 @@ class TestEmotionDetection(unittest.TestCase):
     def test_emotion_detection_fear(self):
         text_to_analyze = "I am really afraid that this will happen"
         assert emotion_detector(text_to_analyze).get('dominant_emotion') == "fear"
+
+    def test_emotion_detection_blank_input(self):
+        assert emotion_detector(None).get('dominant_emotion') == None
    
 if __name__ == "__main__":
     unittest.main(verbosity=2)
